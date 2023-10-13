@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SocialComponent } from '../social/social.component';
 
 @Component({
   selector: 'app-hero',
