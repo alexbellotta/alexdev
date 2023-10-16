@@ -1,7 +1,21 @@
+.container{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background-color: var(--body-color);
+    padding: .5rem;
+}
+
+.hero-container{
+    gap: 1rem;
+}
+
 .hero-content{
-    grid-template-columns: .5fr 3fr;
     padding-top: 3.5rem;
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-blob{
@@ -13,22 +27,32 @@
     width: 190px;
 }
 
-.hero-container{
-    gap: 1rem;
+/* For small devices */
+@media screen and (max-width: 567px){
+    .container{
+      margin-left: var(--mb-1);
+      margin-right: var(--mb-1);
+    }
+
+    .hero-blob{
+        width: 180px;
+    }
+
+    .hero-content{
+        padding-top: 5.5rem;
+        flex-direction: column;
+    }
 }
 
-.grid {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.container{
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    z-index: var(--z-fixed);
-    background-color: var(--body-color);
+/* For medium devices */
+@media screen and (min-width: 568px){
+    .hero-img, .hero-data{
+        margin: 0 3rem 0 3rem;
+    }
+    .hero-content{
+        padding-top: 5.5rem;
+        justify-content: space-evenly;
+    }
 }
 
 /* For large devices */
@@ -44,7 +68,7 @@
 
     .hero-content{
         padding-top: 5.5rem;
-        column-gap: 2rem;
+        justify-content: space-evenly;
     }
 
     .hero-blob{
@@ -52,36 +76,21 @@
     }
 }
 
-/* For small devices */
-@media screen and (max-width: 350px){
-    .container{
-      margin-left: var(--mb-1);
-      margin-right: var(--mb-1);
-    }
-
-    .hero-content{
-        grid-template-columns: .25fr 3fr;
-    }
-
-    .hero-blob{
-        width: 180px;
-    }
-}
-
-/* For medium devices */
-@media screen and (min-width: 568px){
-    .hero-content{
-      grid-template-columns: max-content 1fr 1fr;
-    }
-
-    .hero-img{
-        order: 1;
-        justify-self: center;
-    }
-}
-
 @media screen and (min-width: 1024px){
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
     .hero-blob{
         width: 320px;
+        margin-left: 10rem;
+    }
+
+    .hero-content{
+        padding-top: 5.5rem;
+        justify-content: center;
     }
 }
